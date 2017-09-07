@@ -41,9 +41,6 @@ def outgoing():
 
 @app.route('/incoming', methods=['GET', 'POST'])
 def incoming():
-  resp = twilio.twiml.Response()
-  resp.say("Congratulations! You have received your first inbound call! Good bye.")
-  # return str(resp)
   return """<?xml version="1.0" encoding="UTF-8"?>
 <Response>
 <Dial>
