@@ -41,13 +41,7 @@ def outgoing():
 
 @app.route('/incoming', methods=['GET', 'POST'])
 def incoming():
-  return """<?xml version="1.0" encoding="UTF-8"?>
-<Response>
-<Dial>
-    <Client>voice_test</Client>
-</Dial>
-</Response>
-  """
+  return "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response><Dial><Client>voice_test</Client></Dial></Response>"
 
 @app.route('/placeCall', methods=['GET', 'POST'])
 def placeCall():
