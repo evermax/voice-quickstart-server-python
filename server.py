@@ -35,13 +35,14 @@ def token():
 
 @app.route('/outgoing', methods=['GET', 'POST'])
 def outgoing():
-  resp = twilio.twiml.Response()
-  resp.say("Congratulations! You have made your first oubound call! Good bye.")
-  return str(resp)
+  return "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response><Dial><Client>voice_test</Client></Dial></Response>"
 
 @app.route('/incoming', methods=['GET', 'POST'])
 def incoming():
-  return "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response><Dial><Client>voice_test</Client></Dial></Response>"
+  
+  resp = twilio.twiml.Response()
+  resp.say("Congratulations! You have made your first inbound call! Good bye.")
+  return str(resp)
 
 @app.route('/placeCall', methods=['GET', 'POST'])
 def placeCall():
